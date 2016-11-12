@@ -13,7 +13,7 @@
         $scope.isMeal = false;
       } else {
         var myMeals = $scope.meal.replace(/[^0-9\.,^a-z\.,^A-Z\.,]/g, "").split(",");
-        $scope.totalMealCount = myMeals.filter(Boolean).length;
+        $scope.totalMealCount = myMeals.filter(Boolean).length;          
       }
     };
   });
