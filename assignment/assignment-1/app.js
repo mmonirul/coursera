@@ -4,23 +4,18 @@
 
   angular.module('LunchCheck', [])
   .controller('LunchCheckController', function ($scope) {
-    $scope.meal = "";
+    $scope.meal = '';
     $scope.totalMealCount = '';
-    $scope.myMeals = '';
+    $scope.isMeal = true;
 
     $scope.checkMyMeal = function () {
-      var totalMealItems = lunchItems($scope.meal);
-      var myMeals = totalMealItems.split(",");
-      $scope.myMeals = myMeals;
-      $scope.totalMealCount = myMeals.length;
+      if ($scope.meal == '') {
+        $scope.isMeal = false;
+      } else {
+        var myMeals = $scope.meal.replace(/[^0-9\.,^a-z\.,^A-Z\.,]/g, "").split(",");
+        $scope.totalMealCount = myMeals.filter(Boolean).length;
+      }
     };
-
-    function lunchItems(string) {
-        var myMeal = string.replace(/^\s\s*/, '')
-                            .replace(/\s\s*$/, '')
-                            .replace(/[\s,]+/g, ',');
-                    return myMeal;
-    }
   });
 
 })();
