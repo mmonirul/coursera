@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container" ng-controller="LunchCheckController">
-      <h1 class="text-danger text-xs-center">My first angular assignment</h1><br>
+      <h1 class="text-success">My first angular assignment</h1><br>
         <div class="row">
           <div class="col-lg-6">
              <div class="input-group">
@@ -30,6 +30,7 @@
            </div>
         </div>
         <div class="row"><br>
+          <div class="col-lg-6">
             <div ng-if="totalMealCount <= 3 && totalMealCount !=0">
               <div class="alert alert-success" role="alert">
                 <strong>Enjoy!</strong>
@@ -40,6 +41,7 @@
                 <strong>"Too much!"</strong>
               </div>
             </div>
+          </div>
         </div>
     </div>
 
